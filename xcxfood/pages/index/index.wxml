@@ -1,0 +1,34 @@
+<view>
+  <!-- 滑动菜谱banner -->
+  <view>
+    <swiper class="activity" indicator-dots="{{indicatorDots}}">
+      <block wx:for="{{imgUrls}}">
+        <swiper-item>
+          <image src="{{item}}" width="355" height="155" />
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <!-- 菜谱推荐模块 -->
+  <view class="recommend">
+    <image src="{{meunList[4]}}"></image>
+    <text>菜品推荐</text>
+  </view>
+  <!-- 算法推荐的菜谱列表 -->
+  <view>
+    <scroll-view scroll-y="true" class="scoll-h" bindscrolltolower="loadFood">
+      <block wx:for="{{hotFood}}" wx:key="index">
+        <view class="item-ans">
+          <view class="avatar">
+            <image class="img" src="{{item.thumb}}"></image>
+          </view>
+          <view class="expertInfo">
+            <view class="name">{{item.name}}</view>
+            <view class="tag">{{item.flag}}</view>
+          </view>
+          <button bindtap="collection" data-id="{{item.id}}">收藏</button>
+        </view>
+      </block>
+    </scroll-view>
+  </view>
+</view>

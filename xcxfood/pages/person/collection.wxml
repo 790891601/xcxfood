@@ -1,0 +1,17 @@
+<swiper class="tab-content" style="height:1000rpx">
+    <swiper-item wx:for="{{food}}">
+      <scroll-view scroll-y="true" class="scoll-h" bindscrolltolower="loadFood">
+        <block wx:for="{{food}}" wx:key="index">
+          <view class="item-ans">
+            <view class="avatar">
+              <image class="img" src="{{item.thumb}}"></image>
+            </view>
+            <view class="expertInfo">
+              <view class="name">{{item.name}}</view>
+              <view class="tag">{{item.flag}}</view>
+            </view>
+          </view>
+        </block>
+      </scroll-view>
+    </swiper-item>
+  </swiper>
